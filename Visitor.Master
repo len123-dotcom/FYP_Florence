@@ -1,0 +1,247 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Visitor.master.cs" Inherits="FYP_Florence.Visitor" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title> <link href ="layoutStyling.css" rel ="stylesheet" type ="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/acc7225e7e.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+    <style>
+        .container {
+            margin: 0 auto;
+            padding-left: 1px;
+            padding-right: 1px;
+            max-width: 1200px;
+        }
+
+        body{
+            background-color:#FEFAF6;
+        }
+        .login {
+            background: #3434eb;
+            border-radius: 8px;
+            color: #ffffff;
+            font-family:"Inter";
+            border:none;
+            cursor:pointer;
+            height:40px;
+            width:100px;
+        }
+
+        .user-controls {
+            position: absolute;
+            top: 60px;
+            right: 70px;
+            display: flex;
+            align-items: center;
+            gap:30px;
+
+        }
+        .user-controls a,
+        .user-controls button {
+            margin-left: 10px;
+            font-weight: normal
+        }
+        .user-link {
+            background: #005AE5;
+            border-radius: 8px;
+            color: #ffffff;
+            font-family: "poppinssemibold";
+            border: none;
+            cursor: pointer;
+            height: 40px;
+            width: 100px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 14px; 
+        }
+
+        .footer-subscribe {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .footer-subscribe input[type="email"] {
+            border: 1px solid #ccc;
+            border-radius: 4px 0 0 4px;
+            padding: 10px 15px;
+            height: 20px;
+            width: 250px;
+            font-size: 14px;
+        }
+
+        .footer-subscribe button {
+            background: #61b752;
+            border: none;
+            border-radius: 0 4px 4px 0;
+            padding: 0 15px;
+            height: 40px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .footer-subscribe button img {
+            width: 20px;
+            height: 20px;
+        }
+
+        #msg {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            color: #61b752;
+            font-size: 14px;
+        }
+
+        .footer-socials {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .footer-social-link {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: #333;
+            text-decoration: none;
+            font-size: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-social-link:hover {
+            color: #61b752;
+        }
+
+        .footer-social-link i {
+            font-size: 20px;
+        }
+
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <script>
+        function setUsername(userName, userType) {
+           var loginButton = document.getElementById('<%= btnLogin.ClientID %>');
+           var userNameSpan = document.getElementById('userNameSpan');
+
+           if (loginButton) {
+               loginButton.style.display = 'none'; 
+           }
+
+           if (userNameSpan) {
+               userNameSpan.innerText = userName;
+               userNameSpan.className = 'user-link';
+               userNameSpan.style.cursor = 'pointer'; 
+               userNameSpan.onclick = function () {
+                   window.location.href = (userType == "admin") ? "adminDashboard.aspx" : "memberDashboard.aspx";
+               };
+           }
+       }
+    </script>
+
+</head>
+<body>
+
+    <div class="content-wrapper">
+        <div class="section section-dark">
+            <div class="container">
+                <div class="navbar">
+                    <div class="logo-container">
+                        <asp:Image ID="Image1" title="Juhi" alt="Juhi Logo" runat="server" ImageUrl="~/logo.png" style="height: 80px; width:80px;" ImageAlign="Left"/>
+                        <h2>JUHI IBU LUCIA</h2>
+                    </div>
+
+                    <nav>
+                        <ul class="nav-links">
+                            <a href="home.aspx">Home</a>
+                            <a href="aboutUs.aspx">About Us</a>
+                            <a href ="productPage1.aspx">Product</a>
+                            <a href ="contactPage.aspx">Contact</a>
+                        </ul>                        
+                    </nav>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <form id="form1" runat="server">
+
+        <div class="user-controls">
+            <a href="cart.aspx">
+                <i class="fa-solid fa-cart-shopping fa-2x" style="font-size:25px;"></i>
+            </a>
+            <asp:Button runat="server" ID="btnLogin" Text="LOGIN" CssClass="login" OnClick="btnLogin_Click" />
+            <div id="userNameSpan"></div>
+        </div>
+   
+
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+    <a href="https://wa.me/+6281280052613" class="whatsapp-link" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+    <div class="footer">
+        <div class="container-footer">
+            <p class="copyright">Juhi Ibu Lucia &copy; 2024</p>
+            <p class="contact-info">
+                <span>Telpon: +62 8161407832</span>
+                <span>Email: luciasusetio@gmail.com</span>
+            </p>
+        </div>
+     
+    
+        <div class="footer-subscribe">
+            <form name='submit-to-google-sheet' style="display:flex;">
+                <input type="email" name="Email" placeholder="Your Email Address" required />
+                <button type="submit"><img src="send-icon.png" alt="Send" /></button>
+            </form>
+        </div>
+        <span id="msg"></span>
+
+        <div class="footer-socials">
+        <a href="https://www.tokopedia.com/luckcyrud" class="footer-social-link" target="_blank">
+            <i class="fa-solid fa-store" style="color:green"></i> Tokopedia
+        </a>
+        <a href="https://shopee.co.id/florencee02?entryPoint=ShopBySearch&searchKeyword=juhi%20ibu%20lucia" class="footer-social-link" target="_blank">
+            <i class="fa-solid fa-shopping-bag" style="color:orangered"></i> Shopee
+        </a>
+    </div>
+
+   </div>
+        
+    <script>
+        const scriptURL = "https://script.google.com/macros/s/AKfycbyOCpzw14SJh0FOGXHOj5HBGz4m7kygoIOPHg5JeN3UCglVa2pd--J5RxkOE4WQgPx0/exec"
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg") 
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => {
+                    msg.innerHTML = "Thank You For Subscribing"
+                    setTimeout(function () {
+                        msg.innerHTML =""
+                    }, 5000)
+                    form.reset()
+                })
+                .catch(error => console.error('Error!', error.message))
+        })
+    </script>
+</body>
+</html>

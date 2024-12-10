@@ -1,0 +1,138 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+    padding: 0px;
+    width: 100%;
+}
+
+    ul li {
+        margin: 50px 0;
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+    }
+
+        ul li i {
+            width: 40px;
+            margin-right: 0px;
+        }
+
+
+        ul li a {
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
+        }
+
+            ul li a p {
+                display: none;
+                white-space: nowrap;
+                font-size: 17px;
+                font-family: "Inter";
+            }
+
+.side-nav.show-menu {
+    width: 250px;
+}
+
+    .side-nav.show-menu ul li a p {
+        display: block;
+    }
+
+    .side-nav.show-menu ul li {
+        justify-content: flex-start;
+    }
+
+
+.toggle-menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: #bfa58297;
+    backdrop-filter: blur(5px);
+    border-radius: 5px;
+    font-family: 'poppinssemibold';
+    font-size: 13px;
+    margin-left: 20px;
+}
+
+.logout-container {
+    position: absolute;
+    bottom: 100px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+    .logout-container i {
+        position: fixed;
+        left: 10px;
+    }
+
+    .logout-container linkbtn {
+        white-space: nowrap;
+        font-size: 13px;
+        font-family: poppinssemibold;
+    }
+
+.linkbtn {
+    text-decoration: none;
+    margin-left: 5px;
+    position: fixed;
+}
+@font-face {
+    font-family: 'poppinssemibold';
+    src: url('poppins-semibold-webfont.woff2') format('woff2'), url('poppins-semibold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+.header-dashboard {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 10%;
+    height: 100vh;
+    display: flex;
+}
+
+.side-nav {
+    width: 120px;
+    height: 100%;
+    background: #bfa58297;
+    backdrop-filter: blur(5px);
+    transition: width 0.5s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    font-size: 12px;
+    padding: 10px 0px 0px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+
+    .user h2 {
+        font-size: 15px;
+        font-weight: 600;
+        white-space: nowrap;
+    }

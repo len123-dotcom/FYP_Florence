@@ -1,0 +1,113 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="FYP_Florence.Admin" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/acc7225e7e.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link href ="dashboard.css" rel ="stylesheet" type ="text/css" />
+    
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+
+    </asp:ContentPlaceHolder>
+
+
+</head>
+
+<body>
+    <h2 style="margin-top:20px; text-align:center;">Welcome Admin!</h2>
+      <div class="header-dashboard">
+        <div class="side-nav">
+             
+            <div class ="user">
+                <div class="toggle-menu">Show Menu</div>
+                
+            </div>
+            <ul>
+
+            <li>
+                <a href="Home.aspx">
+                    <i class="fa-solid fa-house"></i>
+                    <p>Home</p>
+                </a>
+            </li>
+
+                <li>
+                   <a href="adminAddProduct.aspx">
+                        <i class="fa-solid fa-plus"></i>
+                        <p>Add Product</p>
+                   </a>
+                </li>
+                    
+                 <li>
+                   <a href="adminCatalog.aspx">
+                        <i class="fa-solid fa-pen"></i>
+                        <p>Edit Product</p>
+                   </a>
+                </li>
+
+            <li>
+                <a href="adminRegistration.aspx">
+                    <i class="fa-solid fa-user-plus"></i>
+                    <p>Register New Admin</p>
+                </a>
+            </li>
+
+            <li>
+                <a href="orderPage.aspx">
+                   <i class="fa-solid fa-clipboard-list"></i>
+                    <p>Order</p>
+                </a>
+            </li>
+
+            <li>
+                <a href="performance.aspx">
+                    <i class="fa-solid fa-chart-simple"></i>
+                    <p>Chart Peformance</p>
+                </a>
+            </li>
+            <li>
+                <a href="adminReview.aspx">
+                    <i class="fa-solid fa-star"></i>
+                    <p>Review</p>
+                </a>
+            </li>
+        </ul>        
+    </div>
+</div>
+
+    <script>
+        const toggleMenu = document.querySelector('.toggle-menu');
+        const sideNav = document.querySelector('.side-nav');
+
+        toggleMenu.addEventListener('click', () => {
+            sideNav.classList.toggle('show-menu');
+            toggleMenu.textContent = sideNav.classList.contains('show-menu') ? 'Hide Menu' : 'Show Menu';
+            addDropdownListeners();
+        });
+
+    
+    </script>
+
+    <form id="form1" runat="server">
+          <div class="logout-container">
+    
+              <i class="fa-solid fa-right-from-bracket"></i>
+              <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click" CssClass ="linkbtn">Log Out</asp:LinkButton>
+        </div>
+
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                
+
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>

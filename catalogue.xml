@@ -1,0 +1,52 @@
+<?xml version="1.0" standalone="yes"?>
+<products>
+  <product>
+    <Id>19</Id>
+    <product_name>Rujak Squid</product_name>
+    <product_price>15000.0000</product_price>
+    <product_description>Rujak Squid home made by ibu lucia, try for the best!</product_description>
+    <product_quantity>9</product_quantity>
+    <product_image>rujak juhi.png</product_image>
+  </product>
+  <product>
+    <Id>21</Id>
+    <product_name>Dry Squid Body</product_name>
+    <product_price>12000.0000</product_price>
+    <product_description>asdad</product_description>
+    <product_quantity>11</product_quantity>
+    <product_image>juhi giling.png</product_image>
+  </product>
+  <product>
+    <Id>23</Id>
+    <product_name>Squid Parcel</product_name>
+    <product_price>11000.0000</product_price>
+    <product_description>Delicious with new sensation</product_description>
+    <product_quantity>11</product_quantity>
+    <product_image>kepala juhi.png</product_image>
+  </product>
+  <product>
+    <Id>24</Id>
+    <product_name>Dry Squid Hand</product_name>
+    <product_price>12000.0000</product_price>
+    <product_description>chilli, garlic, and salt</product_description>
+    <product_quantity>12</product_quantity>
+    <product_image>sayapjuhi.png</product_image>
+  </product>
+  <product>
+    <Id>11</Id>
+    <product_name>Squid Jerky</product_name>
+    <product_price>20000.0000</product_price>
+    <product_description>aaa</product_description>
+    <product_quantity>6</product_quantity>
+    <product_image>Screenshot 2024-05-18 140154.png</product_image>
+    <avg_rating>0</avg_rating>
+  </product>
+  <product>
+    <Id>13</Id>
+    <product_name>Crispy Squid</product_name>
+    <product_price>11000.0000</product_price>
+    <product_description>aaa</product_description>
+    <product_quantity>8</product_quantity>
+    <product_image>Screenshot 2024-05-17 144816.png</product_image>
+  </product>
+</products>
